@@ -1,8 +1,5 @@
 const entriesConfig = require('./entries')
-const config = require('../config')
-const path = require('path')
 const webpack = require('webpack')
-const eslintFormatter = require('eslint-friendly-formatter')
 const resolve = require('./utils').resolve
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
@@ -59,12 +56,6 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(js|jsx)$/,
-        enforce: 'pre',
-        use: 'happypack/loader?id=eslint',
-        include: resolve('src'),
-      },
-      {
         test: /\.(png|jpe?g|gif|svg)$/,
         loader: 'url-loader',
         query: {
@@ -79,21 +70,6 @@ module.exports = {
     new HappyPack({
       id: 'babel',
       loaders: ['babel-loader?cacheDirectory'],
-      threadPool: happyThreadPool,
-      verbose: true
-    }),
-    new HappyPack({
-      id: 'eslint',
-      loaders: [
-        {
-          loader: 'eslint-loader',
-          options: {
-            cacheDirectory: true,
-            formatter: eslintFormatter,
-            eslintPath: 'eslint'
-          }
-        }
-      ],
       threadPool: happyThreadPool,
       verbose: true
     }),
