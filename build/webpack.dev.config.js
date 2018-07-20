@@ -12,6 +12,9 @@ Object.keys(baseWebpackConfig.entry).map(name => {
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
   plugins: [
+    new webpack.DllReferencePlugin({
+      manifest: resolve('dist/dll/dll-manifest.json'),
+    }),
     new webpack.NamedModulesPlugin(),
     // 热替换插件
     new webpack.HotModuleReplacementPlugin(),
