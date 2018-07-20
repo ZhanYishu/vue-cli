@@ -98,6 +98,9 @@ module.exports = {
       verbose: true
     }),
     // 移除moment.js语言包
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn|en/),
+    new webpack.DllReferencePlugin({
+      manifest: resolve('dist/dll/dll-manifest.json'),
+    })
   ]
 }

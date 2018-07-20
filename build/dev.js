@@ -1,5 +1,6 @@
 process.env.NODE_ENV = 'development'
 
+const resolve = require('./utils').resolve
 // 开发环境配置
 const config = require('../config')
 // 代理配置
@@ -26,7 +27,7 @@ const webpackConfig = require('./webpack.dev.config.js')
 const compiler = webpack(webpackConfig)
 
 const devMiddleware = webpackDevMiddleware(compiler, {
-  publicPath: webpackConfig.output.publicPath
+  publicPath: '/'
 })
 
 app.use(devMiddleware)
@@ -35,6 +36,8 @@ app.use(hotMiddleware(compiler, {
   log: false,
   heartbeat: 2000
 }))
+
+app.use('/dll', express.static('./dist/dll'))
 
 // 代理配置
 Object.keys(proxy).forEach(function (context) {

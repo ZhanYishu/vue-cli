@@ -5,7 +5,7 @@
   "description": "vue-cli",
   "main": "index.js",
   "scripts": {
-    "dev": "node build/dev.js --progress",
+    "dev": "node build/dll.js && node build/dev.js --progress",
     "build": "node build/prod.js --progress"
   },
   "keywords": [

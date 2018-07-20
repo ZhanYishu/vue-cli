@@ -12,7 +12,7 @@ const htmlPlugins = []
 for (let name in templates) {
   htmlPlugins.push(
     new HtmlWebpackPlugin({
-      title: 'React-Cli',
+      title: 'vue-cli',
       inject: true,
       filename: name + '.html',
       template: templates[name],
