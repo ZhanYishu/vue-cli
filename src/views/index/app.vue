@@ -1,5 +1,7 @@
 <template>
+  <div class="bg">
     <h1 class="title">welcome to vue-cli</h1>
+  </div>
 </template>
 
 <script>
@@ -9,8 +11,8 @@
 </script>
 
 <style scoped>
-    .title {
-        font-weight: bold;
-        font-color: red
-    }
+  .title {
+      font-weight: bold;
+      font-color: red
+  }
 </style>
