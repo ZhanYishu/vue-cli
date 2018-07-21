@@ -12,7 +12,7 @@
 
 <style scoped>
   .title {
-      font-weight: bold;
-      font-color: red
+    font-weight: bold;
+    font-color: red;
   }
 </style>

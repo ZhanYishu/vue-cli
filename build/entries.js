@@ -7,10 +7,6 @@ const HTML_ENTRY_NAME = 'index.html'
 
 // 按照文件目录获取入口文件地址
 const entries = getEntries(path.resolve(__dirname, '../src/views'), INDEX_ENTRY_NAME)
-// 注入公共模块vendor
-// Object.keys(entries).map(name => {
-//   entries[name] = ['vendor'].concat(entries[name])
-// })
 
 // 按照文件目录获取入口html地址
 const htmlEntries = getEntries(path.resolve(__dirname, '../src/views'), HTML_ENTRY_NAME)

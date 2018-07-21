@@ -4,7 +4,6 @@ const webpackConfig = require('./webpack.dll.config')
 const resolve = require('./utils').resolve
 
 if (!(fs.existsSync(resolve('dist/dll/dll-manifest.json')))) {
-  console.log(111)
   webpack(webpackConfig, function (err, stats) {
     if (err) throw err
     process.stdout.write(stats.toString({
