@@ -7,7 +7,7 @@ module.exports = {
     autoOpenBrowser: true,
     proxy: {
       '/api': {
-        target: 'http://10.16.85.137/yh/ihr/api',
+        target: '/',
         pathRewrite: {
           '/api': '/'
         }
